@@ -65,7 +65,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/insert.js":
+/***/ "./resources/js/insert.js":
 /***/ (function(module, exports) {
 
 //=============================================================================
@@ -195,7 +195,7 @@ $('.curriculo-form').submit(function (event) {
 /***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./resources/assets/js/insert.js");
+module.exports = __webpack_require__("./resources/js/insert.js");
 
 
 /***/ })

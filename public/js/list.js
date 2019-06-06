@@ -65,7 +65,7 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/assets/js/list.js":
+/***/ "./resources/js/list.js":
 /***/ (function(module, exports) {
 
 //dialog
@@ -409,7 +409,7 @@ $('.ev-reset-filter').on('click', function () {
 /***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__("./resources/assets/js/list.js");
+module.exports = __webpack_require__("./resources/js/list.js");
 
 
 /***/ })
