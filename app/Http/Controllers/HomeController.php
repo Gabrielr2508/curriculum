@@ -15,7 +15,8 @@ class HomeController extends Controller
 		//pega as áres de interesse do banco e direciona para a tela de submeter currículos
 		$offices = Office::where('is_office', true)->orderBy('created_at')->get();
 
-		return view('insert-curriculum', ['offices' => $offices]);
+		// return view('insert-curriculum', ['offices' => $offices]);
+		return view('master');
 	}
 
 	public function store(Request $in)

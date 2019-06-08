@@ -1,19 +1,21 @@
 {
+    "/js/app.js": "/js/app.js?id=92512a7cbb991290ab3f",
+    "/js/login.js": "/js/login.js?id=3d2f61eec843c8012d15",
     "/js/search.js": "/js/search.js?id=4deec3b062998a863cad",
     "/js/modal.js": "/js/modal.js?id=a5f2193ee5289c690964",
     "/js/mask-tel.js": "/js/mask-tel.js?id=29724ed87ea2411e2098",
-    "/js/login.js": "/js/login.js?id=f7ea00f886ef82f8c4f8",
     "/js/list.js": "/js/list.js?id=b7f571f7ace2008944e2",
     "/js/insert.js": "/js/insert.js?id=7216d616396a5412105e",
-    "/lib/js/jquery.min.js": "/lib/js/jquery.min.js?id=a09e13ee94d51c524b7e",
+    "/lib/js/jquery.min.js": "/lib/js/jquery.min.js?id=220afd743d9e9643852e",
     "/lib/js/jquery.mask.min.js": "/lib/js/jquery.mask.min.js?id=acb54232967a36f1df1d",
     "/lib/js/jquery.barrating.min.js": "/lib/js/jquery.barrating.min.js?id=203d7ef4eb07becfc48b",
-    "/lib/js/dialog-polyfill.js": "/lib/js/dialog-polyfill.js?id=76ed5452c78e1f0fd420",
+    "/lib/js/dialog-polyfill.js": "/lib/js/dialog-polyfill.js?id=8ce662367895025bbb35",
     "/css/insert.css": "/css/insert.css?id=a51cd37dfcea4441947e",
     "/css/list.css": "/css/list.css?id=443447bf314bb5028da6",
     "/css/all.css": "/css/all.css?id=d41d8cd98f00b204e980",
     "/css/utils.css": "/css/utils.css?id=d86731a3891862fb6a9a",
     "/css/login.css": "/css/login.css?id=633beea0f1b6516accf6",
     "/lib/css/dialog-polyfill.css": "/lib/css/dialog-polyfill.css?id=25ed5309ec766a20117e",
-    "/lib/css/fontawesome-stars.css": "/lib/css/fontawesome-stars.css?id=3617a6a630fc89a80914"
+    "/lib/css/fontawesome-stars.css": "/lib/css/fontawesome-stars.css?id=3617a6a630fc89a80914",
+    "/assets/css/main.min.css": "/assets/css/main.min.css?id=a473b19f496db9563ed4"
 }

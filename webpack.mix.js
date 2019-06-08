@@ -1,4 +1,7 @@
-let mix = require('laravel-mix');
+let mix = require('laravel-mix'),
+	poststylus   = require('poststylus'),
+	mqpacker     = require('css-mqpacker'),
+	autoprefixer = require('autoprefixer');
 
 /*
  |--------------------------------------------------------------------------
@@ -26,6 +29,17 @@ mix.styles('resources/css/all.css', 'public/css/all.css');
 mix.styles('resources/css/utils.css', 'public/css/utils.css');
 mix.styles('resources/css/login.css', 'public/css/login.css').version();
 mix.copy(['node_modules/dialog-polyfill/dialog-polyfill.css','node_modules/jquery-bar-rating/dist/themes/fontawesome-stars.css'], 'public/lib/css');
+
+let config = [mqpacker(), autoprefixer({ browsers: ['> 1%', 'last 2 versions'] })];
+
+mix.stylus(
+		'resources/stylus/main.styl',
+		'public/assets/css/main.min.css', {
+			use: [poststylus(config)]
+		}
+	);
+
+mix.js('resources/js/app.js', 'public/js/app.js');
 
 // mix.browserSync({
 // 	proxy: '192.168.99.100:8080'
