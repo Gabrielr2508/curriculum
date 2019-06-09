@@ -75,7 +75,7 @@
 								/>
 								<input
 									:multiple="false"
-									:accept="accept"
+									accept="application/pdf"
 									@change="onFileChange"
 									ref="fileInput"
 									class="d-none"
