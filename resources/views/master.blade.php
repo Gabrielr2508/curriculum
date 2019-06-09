@@ -10,7 +10,7 @@
 		<title>Trabalhe conosco</title>
 
 		<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
-		<link rel="stylesheet" href="{{ mix('assets/css/main.min.css') }}">
+		<link rel="stylesheet" href="{{ mix('css/main.min.css') }}">
 	</head>
 <!-- Uses a transparent header that draws on top of the layout's background -->
 	<body>

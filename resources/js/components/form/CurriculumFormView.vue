@@ -1,5 +1,22 @@
 <template>
-	<curriculum-form-card class="my-5"/>
+	<v-flex xs12>
+		<v-toolbar
+			app
+			color="blue darken-4"
+			dark
+		>
+			<v-toolbar-title>
+				<v-img src="../img/logo.png" width="120"></v-img>
+
+			</v-toolbar-title>
+			<v-spacer/>
+
+			<v-toolbar-items>
+				<v-btn flat>Login</v-btn>
+			</v-toolbar-items>
+		</v-toolbar>
+		<curriculum-form-card class="mb-5 mt-2"/>
+	</v-flex>
 </template>
 
 <script>
