@@ -1,6 +1,7 @@
 {
-    "/js/app.js": "/js/app.js?id=92512a7cbb991290ab3f",
+    "/js/app.js": "/js/app.js?id=65ff98702228ebc829aa",
     "/js/login.js": "/js/login.js?id=3d2f61eec843c8012d15",
+    "/assets/css/main.min.css": "/assets/css/main.min.css?id=a473b19f496db9563ed4",
     "/js/search.js": "/js/search.js?id=4deec3b062998a863cad",
     "/js/modal.js": "/js/modal.js?id=a5f2193ee5289c690964",
     "/js/mask-tel.js": "/js/mask-tel.js?id=29724ed87ea2411e2098",
@@ -16,6 +17,5 @@
     "/css/utils.css": "/css/utils.css?id=d86731a3891862fb6a9a",
     "/css/login.css": "/css/login.css?id=633beea0f1b6516accf6",
     "/lib/css/dialog-polyfill.css": "/lib/css/dialog-polyfill.css?id=25ed5309ec766a20117e",
-    "/lib/css/fontawesome-stars.css": "/lib/css/fontawesome-stars.css?id=3617a6a630fc89a80914",
-    "/assets/css/main.min.css": "/assets/css/main.min.css?id=a473b19f496db9563ed4"
+    "/lib/css/fontawesome-stars.css": "/lib/css/fontawesome-stars.css?id=3617a6a630fc89a80914"
 }

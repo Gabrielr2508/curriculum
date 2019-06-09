@@ -1,6 +1,5 @@
 <template>
-
-	<curriculum-form-card />
+	<curriculum-form-card class="my-5"/>
 </template>
 
 <script>
