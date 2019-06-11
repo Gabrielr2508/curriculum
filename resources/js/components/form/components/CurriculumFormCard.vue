@@ -138,7 +138,7 @@
 							>
 								<v-switch
 									label="Estágio"
-									v-model="formData.isInternship"
+									v-model="formData.is_internship"
 									color="primary"
 								/>
 							</v-flex>
@@ -153,16 +153,20 @@
 				<v-tooltip top>
 					<template v-slot:activator="{ on }">
 						<v-btn
+							v-on="on"
+							@click="handleSubmit"
 							absolute
 							dark
 							fab
 							bottom
 							right
 							color="primary"
-							v-on="on"
-							@click="handleSubmit"
 						>
-							<v-icon>send</v-icon>
+							<v-progress-circular
+								v-if="disableSubmit"
+								indeterminate
+							/>
+							<v-icon v-else>send</v-icon>
 						</v-btn>
 					</template>
 					<span>Enviar</span>
@@ -188,6 +192,7 @@ export default {
 				'UI/UX'
 			],
 			valid: true,
+			disableSubmit: false,
 			formData: {
 				areas: null,
 				filename: '',
@@ -196,7 +201,8 @@ export default {
 				phone: '',
 				linkedin: '',
 				github: '',
-				isInternship: false,
+				is_internship: false,
+				file: null,
 			},
 			rules: {
 				name: [
@@ -247,11 +253,13 @@ export default {
 	},
 
 	methods: {
-		getFormData(files){
+		getFormData(pdf){
 			const data = new FormData();
-			[...files].forEach(file => {
-				data.append('data', file, file.name); // currently only one file at a time
-			});
+			Object.keys(this.formData)
+				.forEach(key => {
+					data.append(key, this.formData[key]);
+				});
+
 			return data;
 		},
 
@@ -261,27 +269,39 @@ export default {
 			}
 		},
 
-		onFileChange($event){
-			const files = $event.target.files || $event.dataTransfer.files;
-			const form = this.getFormData(files);
-
-			if (files) {
-				if (files.length > 0) {
-					this.formData.filename = [...files].map(file => file.name).join(', ');
-				} else {
-					this.formData.filename = null;
-				}
+		onFileChange(){
+			const pdf = this.$refs.fileInput.files[0];
+			if (pdf) {
+				this.formData.filename = pdf.name;
+				this.formData.file = pdf;
 			} else {
-				this.formData.filename = $event.target.value.split('\\').pop();
+				this.formData.filename = null;
+				this.formData.file = null;
 			}
-
-			this.$emit('input', this.formData.filename);
-			this.$emit('formData', form);
 		},
 
 		handleSubmit() {
-			if (this.$refs.curriculumForm.validate()) {
+			if (!this.disableSubmit && this.$refs.curriculumForm.validate()) {
+				this.disableSubmit = true;
 
+				axios.post(
+					'/curriculum',
+					this.getFormData(),
+					{
+						headers: {
+							'Content-Type': 'multipart/form-data'
+						}
+					}
+				)
+				.then((response) => {
+					console.log(response);
+				})
+				.catch((error) => {
+					console.log(error.response);
+				})
+				.then(() => {
+					this.disableSubmit = false;
+				});
 			}
 		}
 	}
