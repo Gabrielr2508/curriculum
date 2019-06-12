@@ -160,8 +160,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        Jenssegers\Mongodb\MongodbServiceProvider::class,
-        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+		Jenssegers\Mongodb\MongodbServiceProvider::class,
+		App\Providers\RecaptchaValidatorServiceProvider::class,
     ],
 
     /*
@@ -212,7 +212,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Moloquent' => Jenssegers\Mongodb\Eloquent\Model::class,
-        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,
     ],
 
 ];

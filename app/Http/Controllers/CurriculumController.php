@@ -77,7 +77,8 @@ class CurriculumController extends Controller
 			'linkedin' => 'nullable|url',
 			'github' => 'nullable|url',
 			'is_internship' => 'required',
-			'file' => 'required|file|mimes:pdf'
+			'file' => 'required|file|mimes:pdf',
+			'recaptcha_response' => 'required|recaptcha',
 		]);
 
 		$profile = Profile::where('email', strtolower($request->email))->first();

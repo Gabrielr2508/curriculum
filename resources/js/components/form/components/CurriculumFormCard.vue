@@ -145,6 +145,14 @@
 							<v-flex xs12>
 								<v-subheader class="red--text">* campos obrigatórios</v-subheader>
 							</v-flex>
+							<vue-recaptcha
+								:sitekey="sitekey"
+								ref="invisibleRecaptcha"
+								size="invisible"
+								badge="bottomleft"
+								@verify="onVerifyRecaptcha"
+								@expired="resetRecaptcha"
+							/>
 						</v-layout>
 					</v-container>
 				</v-form>
@@ -177,9 +185,15 @@
 </template>
 
 <script>
+import VueRecaptcha from 'vue-recaptcha';
+
 export default {
+	components: {
+		VueRecaptcha,
+	},
 	data() {
 		return {
+			sitekey: '6LfuXagUAAAAAHLGJo4BaJKb9lJ_hiBsYmrvXVHC',
 			options: [
 				'Front-end',
 				'Back-end',
@@ -203,6 +217,7 @@ export default {
 				github: '',
 				is_internship: false,
 				file: null,
+				recaptcha_response: null,
 			},
 			rules: {
 				name: [
@@ -280,28 +295,41 @@ export default {
 			}
 		},
 
+		onVerifyRecaptcha(response) {
+			this.formData.recaptcha_response = response;
+
+			this.resetRecaptcha();
+
+			console.log('Verify: ' + response)
+
+			axios.post(
+				'/curriculum',
+				this.getFormData(),
+				{
+					headers: {
+						'Content-Type': 'multipart/form-data'
+					}
+				}
+			)
+			.then((response) => {
+				console.log(response);
+			})
+			.catch((error) => {
+				console.log(error.response);
+			})
+			.then(() => {
+				this.disableSubmit = false;
+			});
+		},
+
+		resetRecaptcha() {
+			this.$refs.invisibleRecaptcha.reset();
+		},
+
 		handleSubmit() {
 			if (!this.disableSubmit && this.$refs.curriculumForm.validate()) {
 				this.disableSubmit = true;
-
-				axios.post(
-					'/curriculum',
-					this.getFormData(),
-					{
-						headers: {
-							'Content-Type': 'multipart/form-data'
-						}
-					}
-				)
-				.then((response) => {
-					console.log(response);
-				})
-				.catch((error) => {
-					console.log(error.response);
-				})
-				.then(() => {
-					this.disableSubmit = false;
-				});
+				this.$refs.invisibleRecaptcha.execute();
 			}
 		}
 	}

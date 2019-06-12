@@ -7,6 +7,8 @@
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 
+		<script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
+
 		<title>Trabalhe conosco</title>
 
 		<link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons' rel="stylesheet">
