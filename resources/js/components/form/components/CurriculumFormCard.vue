@@ -9,7 +9,7 @@
 				<v-container fill-height fluid>
 					<v-layout fill-height align-end>
 						<v-flex xs12>
-							<span class="headline">May your force be with us</span>
+							<span class="headline font-weight-light">May your force be with us</span>
 						</v-flex>
 					</v-layout>
 				</v-container>
@@ -143,7 +143,7 @@
 								/>
 							</v-flex>
 							<v-flex xs12>
-								<v-subheader class="red--text">* campos obrigatórios</v-subheader>
+								<span class="red--text caption">* campos obrigatórios</span>
 							</v-flex>
 							<vue-recaptcha
 								:sitekey="sitekey"
