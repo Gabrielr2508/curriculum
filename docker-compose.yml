@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+    web:
+        build: .
+        volumes:
+            - .:/home/project-folder
+        ports:
+            - '8080:80'
+            - '3000:3000'
+            - '3001:3001'
+    mongo:
+        image: 'mongo'
+        volumes:
+            - 'mongodb_data:/curriculum'
+        ports:
+            - '27017:27017'
+volumes:
+    mongodb_data:
+        driver: local
