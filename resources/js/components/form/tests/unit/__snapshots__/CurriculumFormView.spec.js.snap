@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurriculumFormView renders the component 1`] = `
+<v-flex-stub tag="div" xs12="">
+  <v-toolbar-stub app="true" color="blue darken-4" dark="true" scrollthreshold="300">
+    <v-toolbar-title-stub>
+      <v-img-stub width="120" src="../img/logo.png" position="center center" transition="fade-transition"></v-img-stub>
+    </v-toolbar-title-stub>
+    <v-spacer-stub></v-spacer-stub>
+    <v-toolbar-items-stub>
+      <v-btn-stub activeclass="v-btn--active" tag="button" flat="true" type="button">Login</v-btn-stub>
+    </v-toolbar-items-stub>
+  </v-toolbar-stub>
+  <curriculum-form-card-stub class="mb-5 mt-2"></curriculum-form-card-stub>
+</v-flex-stub>
+`;

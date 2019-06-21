@@ -7,19 +7,29 @@
     "watch-poll": "npm run watch -- --watch-poll",
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.29",
     "axios": "^0.18.1",
+    "babel-jest": "^24.8.0",
     "bootstrap": "^4.3.1",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "2.0.1",
     "cross-env": "^5.2.0",
+    "flush-promises": "^1.0.2",
+    "jest": "^24.8.0",
+    "jest-serializer-vue": "^2.0.2",
+    "jest-transform-stub": "^2.0.0",
     "jquery": "^3.4.1",
     "laravel-mix": "^2.1.14",
     "lodash": "^4.17.11",
+    "nock": "^10.0.6",
     "popper.js": "^1.15.0",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-jest": "^3.0.4"
   },
   "dependencies": {
     "css-mqpacker": "^7.0.0",
@@ -34,5 +44,27 @@
     "vue-recaptcha": "^1.1.1",
     "vue-router": "^3.0.6",
     "vuetify": "^1.5.14"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      "^.+\\.vue$": "vue-jest",
+      ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub",
+      "^.+\\.(js|jsx)?$": "<rootDir>/node_modules/babel-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/resources/js/$1"
+    },
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ],
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "moduleDirectories": ["node_modules", "resources"]
   }
 }
