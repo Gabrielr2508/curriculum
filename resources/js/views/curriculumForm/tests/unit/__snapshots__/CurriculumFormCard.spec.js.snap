@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurriculumFormCard renders the component 1`] = `
+<v-flex-stub tag="div" xs12="" sm6="" offset-sm3="">
+  <v-card-stub tag="div">
+    <v-img-stub aspectratio="2.75" src="../img/card-bg.jpg" position="center center" transition="fade-transition" class="white--text">
+      <v-container-stub tag="div" fill-height="" fluid="">
+        <v-layout-stub tag="div" fill-height="" align-end="">
+          <v-flex-stub tag="div" xs12=""><span class="headline font-weight-light">May your force be with us</span></v-flex-stub>
+        </v-layout-stub>
+      </v-container-stub>
+    </v-img-stub>
+    <v-card-text-stub>
+      <v-form-stub value="true">
+        <v-container-stub tag="div">
+          <v-layout-stub tag="div" column="">
+            <v-flex-stub tag="div" xs12="">
+              <v-text-field-stub rules="v => !!v || 'Esse campo é obrigatório',v => v &amp;&amp; v.length >= 10 || 'O nome precisa ter pelo menos 10 caracteres'" label="Nome*" outline="" prepend-icon="person" required="" value=""></v-text-field-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12="">
+              <v-text-field-stub rules="v => !!v || 'Esse campo é obrigatório',v => {
+    const pattern = /^(([^<>()[\\]\\\\.,;:\\s@&quot;]+(\\.[^<>()[\\]\\\\.,;:\\s@&quot;]+)*)|(&quot;.+&quot;))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$/;
+    return pattern.test(v) || 'O E-mail precisa ser válido';
+  }" label="E-mail*" outline="" prepend-icon="email" required="" value=""></v-text-field-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12="">
+              <v-text-field-stub rules="v => !!v || 'Esse campo é obrigatório',v => {
+    const pattern = /^(1[2-9]{1})|([2-9]{1}\\d{1})(9\\d{8})$/;
+    return pattern.test(v) || 'O número de celular precisa ser válido';
+  }" mask="(##) ##### - ####" label="Celular*" outline="" required="" value=""></v-text-field-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12="">
+              <v-text-field-stub label="Linkedin" rules="v => {
+    if (v.length === 0) {
+      return true;
+    }
+
+    const pattern = /^http(s)?:\\/\\/([\\w]+\\.)?linkedin\\.com\\/in\\/[A-z0-9_-]+\\/?$/;
+    return pattern.test(v) || 'O link do LinkedIn precisa ser válido';
+  }" outline="" value=""></v-text-field-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12="">
+              <v-text-field-stub label="GitHub" rules="v => {
+    if (v.length === 0) {
+      return true;
+    }
+
+    const pattern = /^http(s)?:\\/\\/(www\\.)?github\\.com\\/[A-z0-9_-]+\\/?$/;
+    return pattern.test(v) || 'O link do GitHub precisa ser válido';
+  }" outline="" value=""></v-text-field-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12="">
+              <v-text-field-stub label="Currículo (pdf)*" outline="" prepend-icon="attach_file" required="" rules="v => !!v || 'Esse campo é obrigatório'" value=""></v-text-field-stub> <input accept="application/pdf" type="file" class="d-none">
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12="">
+              <v-select-stub multiple="true" items="Front-end,Back-end,Administrativo,Financeiro,Cozinha,Limpeza,DevOps,Design,UI/UX" rules="v => !!v &amp;&amp; v.length !== 0 || 'Escolha pelo menos uma área'" label="Áreas de interesse*" chips="" outline="" deletable-chips="" prepend-icon="work" small-chips="" required=""></v-select-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12="">
+              <v-switch-stub color="primary" errorcount="1" errormessages="" messages="" rules="" successmessages="" backgroundcolor="" label="Estágio" ripple="true" valuecomparator="function deepEqual(a, b) {
+    if (a === b) return true;
+    if (a instanceof Date &amp;&amp; b instanceof Date) {
+        // If the values are Date, they were convert to timestamp with getTime and compare it
+        if (a.getTime() !== b.getTime()) return false;
+    }
+    if (a !== Object(a) || b !== Object(b)) {
+        // If the values aren't objects, they were already checked for equality
+        return false;
+    }
+    var props = Object.keys(a);
+    if (props.length !== Object.keys(b).length) {
+        // Different number of props, don't bother to check
+        return false;
+    }
+    return props.every(function (p) {
+        return deepEqual(a[p], b[p]);
+    });
+}"></v-switch-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12=""><span class="red--text caption">* campos obrigatórios</span></v-flex-stub>
+            <vue-recaptcha-stub sitekey="6LfuXagUAAAAAHLGJo4BaJKb9lJ_hiBsYmrvXVHC" badge="bottomleft" size="invisible"></vue-recaptcha-stub>
+          </v-layout-stub>
+        </v-container-stub>
+      </v-form-stub>
+    </v-card-text-stub>
+    <v-card-actions-stub>
+      <v-tooltip-stub opendelay="200" closedelay="200" contentclass="" fixed="true" top="true" maxwidth="auto" nudgebottom="0" nudgeleft="0" nudgeright="0" nudgetop="0" nudgewidth="0" debounce="0" tag="span"> <span>Enviar</span></v-tooltip-stub>
+    </v-card-actions-stub>
+  </v-card-stub>
+</v-flex-stub>
+`;

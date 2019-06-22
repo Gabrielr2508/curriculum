@@ -1,4 +1,4 @@
-import CurriculumFormView from '../components/form/CurriculumFormView.vue';
+import CurriculumFormView from '../views/curriculumForm/CurriculumFormView.vue';
 
 export default [
 	{
