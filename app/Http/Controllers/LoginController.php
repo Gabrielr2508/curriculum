@@ -12,7 +12,7 @@ class LoginController extends Controller
         if (Auth::check()) {
             return redirect(action('CurriculumController@index'));
         }
-        
+
         return view('login');
 	}
 
@@ -20,21 +20,22 @@ class LoginController extends Controller
     {
         $this->validate($request, [
             'email' => 'required|email',
-			'password' => 'required'
+			'password' => 'required|min:6'
         ]);
-        
+
         $credentials = $request->only('email', 'password');
 
         if (auth()->attempt($credentials)) {
             // Authentication passed...
             return redirect()->intended('curriculum');
         }
-        return redirect()->intended('auth')->with('message', 'Dados Incorretos');
+
+        return redirect()->intended('login')->with('message', 'Dados Incorretos');
     }
 
     public function logout()
     {
-    	auth()->logout();
-    	return redirect(action('HomeController@index'));
+        auth()->logout();
+        return redirect(action('HomeController@index'));
     }
 }

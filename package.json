@@ -65,6 +65,9 @@
     "transformIgnorePatterns": [
       "<rootDir>/node_modules/"
     ],
-    "moduleDirectories": ["node_modules", "resources"]
+    "moduleDirectories": [
+      "node_modules",
+      "resources"
+    ]
   }
 }

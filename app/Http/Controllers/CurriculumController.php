@@ -38,7 +38,7 @@ class CurriculumController extends Controller
 			return view('card-section', ['profiles' => $not_archived]);
 		}
 		else {
-			return view('list-curriculas', ['archived' => $archived, 'not_archived' => $not_archived]);	
+			return view('list-curriculas', ['archived' => $archived, 'not_archived' => $not_archived]);
 		}
 	}
 

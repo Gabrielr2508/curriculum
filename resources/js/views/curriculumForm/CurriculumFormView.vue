@@ -12,7 +12,12 @@
 			<v-spacer/>
 
 			<v-toolbar-items>
-				<v-btn flat>Login</v-btn>
+				<v-btn
+					flat
+					to="/login"
+				>
+					Login
+				</v-btn>
 			</v-toolbar-items>
 		</v-toolbar>
 		<curriculum-form-card class="mb-5 mt-2"/>

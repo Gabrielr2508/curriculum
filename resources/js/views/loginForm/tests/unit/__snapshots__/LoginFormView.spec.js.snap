@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginFormView renders the component 1`] = `
+<v-content-stub tag="main" class="grey lighten-2">
+  <v-container-stub tag="div" fluid="" fill-height="">
+    <v-layout-stub tag="div" align-center="" justify-center="">
+      <login-form-card-stub></login-form-card-stub>
+    </v-layout-stub>
+  </v-container-stub>
+</v-content-stub>
+`;

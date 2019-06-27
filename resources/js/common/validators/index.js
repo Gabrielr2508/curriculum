@@ -41,4 +41,8 @@ export default {
     areas: [
         v => (!!v && v.length !== 0) || 'Escolha pelo menos uma área',
     ],
+    password: [
+        v => !!v || 'Esse campo é obrigatório',
+        v => (v && v.length >= 6) || 'A senha precisa ter pelo menos 6 caracteres'
+    ],
 }

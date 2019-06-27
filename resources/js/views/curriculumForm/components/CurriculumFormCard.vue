@@ -185,8 +185,9 @@
 </template>
 
 <script>
+import env from '../../../env';
 import VueRecaptcha from 'vue-recaptcha';
-import validators from '../validators';
+import validators from '../../../common/validators';
 
 export default {
 	components: {
@@ -194,7 +195,7 @@ export default {
 	},
 	data() {
 		return {
-			sitekey: '6LfuXagUAAAAAHLGJo4BaJKb9lJ_hiBsYmrvXVHC',
+			sitekey: env.SITE_KEY,
 			options: [
 				'Front-end',
 				'Back-end',

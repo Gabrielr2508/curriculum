@@ -8,7 +8,9 @@ exports[`CurriculumFormView renders the component 1`] = `
     </v-toolbar-title-stub>
     <v-spacer-stub></v-spacer-stub>
     <v-toolbar-items-stub>
-      <v-btn-stub activeclass="v-btn--active" tag="button" flat="true" type="button">Login</v-btn-stub>
+      <v-btn-stub activeclass="v-btn--active" to="/login" tag="button" flat="true" type="button">
+        Login
+      </v-btn-stub>
     </v-toolbar-items-stub>
   </v-toolbar-stub>
   <curriculum-form-card-stub class="mb-5 mt-2"></curriculum-form-card-stub>

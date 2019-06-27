@@ -12,11 +12,11 @@ class UsersCollectionSeeder extends Seeder
      */
     public function run()
     {
-		$user = new User;
-		$user->name = 'Test';
-		$user->email = 'test@test.com';
-		$user->password = bcrypt('1234');
+      $user = new User;
+      $user->name = 'Test';
+      $user->email = 'test@test.com';
+      $user->password = bcrypt('123456');
 
-		$user->save();
+      $user->save();
     }
 }

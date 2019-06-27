@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginFormCard renders the component 1`] = `
+<v-flex-stub tag="div" xs12="" sm6="">
+  <v-card-stub tag="div">
+    <v-layout-stub tag="div" align-center="" justify-center="">
+      <v-flex-stub tag="div" xs8="" offset-xs-2="">
+        <v-img-stub width="100%" contain="true" src="../img/logo.png" position="center" transition="fade-transition" class="mt-4"></v-img-stub>
+      </v-flex-stub>
+    </v-layout-stub>
+    <v-card-text-stub>
+      <v-form-stub value="true">
+        <v-container-stub tag="div">
+          <v-layout-stub tag="div" column="">
+            <v-flex-stub tag="div" xs12="">
+              <v-text-field-stub rules="v => !!v || 'Esse campo é obrigatório',v => {
+    const pattern = /^(([^<>()[\\]\\\\.,;:\\s@&quot;]+(\\.[^<>()[\\]\\\\.,;:\\s@&quot;]+)*)|(&quot;.+&quot;))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$/;
+    return pattern.test(v) || 'O E-mail precisa ser válido';
+  }" label="E-mail*" outline="" prepend-icon="email" required="" value=""></v-text-field-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12="">
+              <v-text-field-stub rules="v => !!v || 'Esse campo é obrigatório',v => v &amp;&amp; v.length >= 6 || 'A senha precisa ter pelo menos 6 caracteres'" type="password" append-icon="visibility_off" prepend-icon="vpn_key" label="Senha*" counter="" outline="" value=""></v-text-field-stub>
+            </v-flex-stub>
+            <v-flex-stub tag="div" xs12=""><span class="red--text caption">* campos obrigatórios</span></v-flex-stub>
+            <vue-recaptcha-stub sitekey="6LfuXagUAAAAAHLGJo4BaJKb9lJ_hiBsYmrvXVHC" badge="bottomleft" size="invisible"></vue-recaptcha-stub>
+          </v-layout-stub>
+        </v-container-stub>
+      </v-form-stub>
+    </v-card-text-stub>
+    <v-card-actions-stub>
+      <v-container-stub tag="div">
+        <v-layout-stub tag="div" justify-space-between="">
+          <v-btn-stub color="primary" activeclass="v-btn--active" tag="button" dark="true" flat="true" type="button">
+            Resetar senha
+          </v-btn-stub>
+          <v-btn-stub color="primary" activeclass="v-btn--active" tag="button" type="button"><span>Login</span></v-btn-stub>
+        </v-layout-stub>
+      </v-container-stub>
+    </v-card-actions-stub>
+  </v-card-stub>
+</v-flex-stub>
+`;
