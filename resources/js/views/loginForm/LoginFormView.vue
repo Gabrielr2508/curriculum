@@ -3,12 +3,12 @@
     	<v-container fluid fill-height>
         	<v-layout align-center justify-center>
 				<reset-password-form-card
-					v-show="showResetForm"
+					v-if="showResetForm"
 					@toggleResetForm="toggleResetForm"
 				/>
 
 				<login-form-card
-					v-show="!showResetForm"
+					v-else
 					@toggleResetForm="toggleResetForm"
 				/>
         	</v-layout>
