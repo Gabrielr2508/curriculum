@@ -20,7 +20,7 @@
 				</v-btn>
 			</v-toolbar-items>
 		</v-toolbar>
-		<curriculum-form-card class="mb-5 mt-2"/>
+		<curriculum-form-card class="mb-5 mt-5 pt-5"/>
 	</v-flex>
 </template>
 

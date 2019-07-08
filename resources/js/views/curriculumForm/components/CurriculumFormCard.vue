@@ -9,7 +9,7 @@
 				<v-container fill-height fluid>
 					<v-layout fill-height align-end>
 						<v-flex xs12>
-							<span class="headline font-weight-light">May your force be with us</span>
+							<span class="headline">May your force be with us</span>
 						</v-flex>
 					</v-layout>
 				</v-container>

@@ -16,10 +16,20 @@
 			<v-card-text>
 				<v-form
 					v-model="valid"
-					ref="loginForm"
+					ref="resetPasswordForm"
 				>
 					<v-container>
 						<v-layout column>
+                            <v-flex xs12 class="mb-3">
+                                <v-alert
+                                    :value="true"
+                                    color="info"
+                                    icon="info"
+                                    outline
+                                >
+                                    Insira seu endereço de e-mail. Se houver uma conta cadastrada, você receberá um e-mail com mais instruções em breve.
+                                </v-alert>
+                            </v-flex>
 							<v-flex
 								xs12
 							>
@@ -31,20 +41,6 @@
 									prepend-icon="email"
 									required
 								></v-text-field>
-							</v-flex>
-							<v-flex
-								xs12
-							>
-								<v-text-field
-									v-model="formData.password"
-									:rules="rules.password"
-									:type="showPassword ? 'text' : 'password'"
-									:append-icon="showPassword ? 'visibility' : 'visibility_off'"
-									prepend-icon="vpn_key"
-									label="Senha*"
-									outline
-									@click:append="showPassword = !showPassword"
-								/>
 							</v-flex>
 							<v-flex xs12>
 								<span class="red--text caption">* campos obrigatórios</span>
@@ -65,12 +61,12 @@
 				<v-container>
 					<v-layout justify-space-between>
 						<v-btn
-							@click="handleForgotPassword"
+							@click="handleBackToLogin"
 							dark
 							flat
 							color="primary"
 						>
-							Resetar senha
+							Login
 						</v-btn>
 						<v-btn
 							@click="handleSubmit"
@@ -82,7 +78,7 @@
 								color="primary"
 								indeterminate
 							/>
-							<span v-else>Login</span>
+							<span v-else>Enviar</span>
 						</v-btn>
 					</v-layout>
 				</v-container>
@@ -99,7 +95,8 @@ import validators from '../../../common/validators';
 export default {
 	components: {
 		VueRecaptcha,
-	},
+    },
+
 	data() {
 		return {
 			showPassword: false,
@@ -108,7 +105,6 @@ export default {
 			disableSubmit: false,
 			formData: {
 				email: '',
-				password: '',
 				recaptcha_response: null,
 			},
 			rules: {
@@ -145,15 +141,16 @@ export default {
 		},
 
 		handleSubmit() {
-			if (!this.disableSubmit && this.$refs.loginForm.validate()) {
+			if (!this.disableSubmit && this.$refs.resetPasswordForm.validate()) {
 				this.disableSubmit = true;
 				this.$refs.invisibleRecaptcha.execute();
 			}
 		},
 
-		handleForgotPassword() {
+		handleBackToLogin() {
+            this.$refs.resetPasswordForm.reset();
 			this.$emit('toggleResetForm');
-		}
+        }
 	}
 }
 </script>
