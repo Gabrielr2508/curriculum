@@ -131,7 +131,9 @@ export default {
 			)
 			.then((response) => {
 				console.log(response);
+				return axios.get('/api/pota');
 			})
+			.then(console.log)
 			.catch((error) => {
 				console.log(error.response);
 			})
