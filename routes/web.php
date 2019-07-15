@@ -18,4 +18,3 @@ Route::post('auth', 'LoginController@authenticate');
 Route::resource('/', 'HomeController');
 
 Route::get('{any?}', 'HomeController@index')->where('any', '.*');
-
