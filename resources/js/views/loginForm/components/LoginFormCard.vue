@@ -95,6 +95,7 @@
 import env from '../../../env';
 import VueRecaptcha from 'vue-recaptcha';
 import validators from '../../../common/validators';
+import { mapMutations } from 'vuex';
 
 export default {
 	components: {
@@ -118,26 +119,22 @@ export default {
 	},
 
 	methods: {
+		...mapMutations('auth', ['setAuthenticated']),
+
 		onVerifyRecaptcha(response) {
 			this.formData.recaptcha_response = response;
 
 			this.resetRecaptcha();
 
-			console.log('Verify: ' + response)
-
 			axios.post(
 				'/auth',
 				this.formData,
 			)
-			.then((response) => {
-				console.log(response);
-				return axios.get('/api/pota');
-			})
-			.then(console.log)
+			.then(() => this.setAuthenticated(true))
 			.catch((error) => {
 				console.log(error.response);
 			})
-			.then(() => {
+			.finally(() => {
 				this.disableSubmit = false;
 			});
 		},

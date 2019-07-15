@@ -21,13 +21,15 @@ import VueRouter from 'vue-router'
 import Root from './Root';
 
 import routes from './routes';
+import store from './store';
 
 const router = new VueRouter({
 	mode: 'history',
 	routes, // short for `routes: routes`
 });
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+
 Vue.use(Vuetify, {
 	icons: {
 		'linkedin': 'icon-linkedin',
@@ -42,4 +44,5 @@ const app = new Vue({
 	components: { Root },
 	template: '<Root/>',
 	router,
+	store,
 });

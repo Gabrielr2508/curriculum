@@ -5,11 +5,16 @@
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
 	name: 'Root',
-}
+
+	created() {
+		const { content: authenticated } = document.querySelector('meta[name="authenticated"]');
+		this.setAuthenticated(!!Number(authenticated));
+	},
+
+	methods: mapMutations('auth', ['setAuthenticated']),
+};
 </script>
-
-<style>
-
-</style>
