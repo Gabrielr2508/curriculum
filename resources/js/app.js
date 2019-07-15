@@ -7,7 +7,6 @@
 
 require('./bootstrap');
 
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -22,6 +21,9 @@ import Root from './Root';
 
 import routes from './routes';
 import store from './store';
+import unauthenticated from './common/interceptors';
+
+axios.interceptors.response.use(null, unauthenticated);
 
 const router = new VueRouter({
 	mode: 'history',
