@@ -25,6 +25,6 @@ class LoginController extends Controller
 	public function logout()
 	{
 		auth()->logout();
-		return response('Logou success', 200);
+		return response('Logout success', 200);
 	}
 }
