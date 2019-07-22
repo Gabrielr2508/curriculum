@@ -1,5 +1,5 @@
 <template>
-	<v-flex xs12 sm6>
+	<v-flex xs12 sm8 md6 lg4>
 		<v-card>
 			<v-layout align-center justify-center>
 				<v-flex xs8 offset-xs-2>

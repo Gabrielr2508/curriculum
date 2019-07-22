@@ -1,5 +1,5 @@
 <template>
-	<v-flex xs12>
+	<v-flex xs12 lg8 offset-lg2>
 		<v-toolbar
 			app
 			color="blue darken-4"
