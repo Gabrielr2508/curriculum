@@ -7,7 +7,6 @@
 
 require('./bootstrap');
 
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -21,13 +20,18 @@ import VueRouter from 'vue-router'
 import Root from './Root';
 
 import routes from './routes';
+import store from './store';
+import unauthenticated from './common/interceptors';
+
+axios.interceptors.response.use(null, unauthenticated);
 
 const router = new VueRouter({
 	mode: 'history',
 	routes, // short for `routes: routes`
 });
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
+
 Vue.use(Vuetify, {
 	icons: {
 		'linkedin': 'icon-linkedin',
@@ -42,4 +46,5 @@ const app = new Vue({
 	components: { Root },
 	template: '<Root/>',
 	router,
+	store,
 });

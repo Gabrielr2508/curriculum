@@ -6,36 +6,25 @@ use DB;
 
 class LoginController extends Controller
 {
-
-	public function index()
+	public function authenticate(Request $request)
 	{
-        if (Auth::check()) {
-            return redirect(action('CurriculumController@index'));
-        }
+		$this->validate($request, [
+			'email' => 'required|email',
+			'password' => 'required|min:6'
+		]);
 
-        return view('login');
+		$credentials = $request->only('email', 'password');
+
+		if (auth()->attempt($credentials)) {
+			return response('Login success', 200);
+		}
+
+		return response('Failed login', 401);
 	}
 
-	public function authenticate(Request $request)
-    {
-        $this->validate($request, [
-            'email' => 'required|email',
-			'password' => 'required|min:6'
-        ]);
-
-        $credentials = $request->only('email', 'password');
-
-        if (auth()->attempt($credentials)) {
-            // Authentication passed...
-            return redirect()->intended('curriculum');
-        }
-
-        return redirect()->intended('login')->with('message', 'Dados Incorretos');
-    }
-
-    public function logout()
-    {
-        auth()->logout();
-        return redirect(action('HomeController@index'));
-    }
+	public function logout()
+	{
+		auth()->logout();
+		return response('Logout success', 200);
+	}
 }
