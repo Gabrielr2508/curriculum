@@ -92,7 +92,6 @@
 </template>
 
 <script>
-import env from '../../../env';
 import VueRecaptcha from 'vue-recaptcha';
 import validators from '../../../common/validators';
 
@@ -103,7 +102,7 @@ export default {
 	data() {
 		return {
 			showPassword: false,
-			sitekey: env.SITE_KEY,
+			sitekey: process.env.MIX_SITE_KEY,
 			valid: true,
 			disableSubmit: false,
 			formData: {
