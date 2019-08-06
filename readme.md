@@ -1,5 +1,7 @@
 # CURRICULUM
 
+We are redesigning the platform in Figma. You can follow the proccess [here](https://www.figma.com/file/JBolmj5sfrAYizVoK64BwK/Curriculum?node-id=0%3A1).
+
 ## About
 A platform to receive, list and manage curriculums.
 
