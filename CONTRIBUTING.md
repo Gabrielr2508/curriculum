@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # Contributing
 
 Thanks for checking out the contributing guide! We're excited to hear and learn from you. Your experiences will benefit others who read and use these guides.
