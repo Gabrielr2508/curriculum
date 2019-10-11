@@ -1,5 +1,7 @@
 # Plataforma de Recrutamento
 
+Olha gente, um PULL REQUEST!
+
 ## Sobre
 Uma plataforma para envio e gerenciamento de currículos.
 
