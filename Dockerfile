@@ -35,7 +35,7 @@ RUN apt -y install php7.2 \
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 RUN npm install -g n npm@latest
-RUN n 8.*
+RUN n 8
 
 # Apachelinker script
 COPY apachelinker.sh /usr/local/bin/apachelinker
